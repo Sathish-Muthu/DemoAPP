@@ -32,7 +32,6 @@ class BookmarkViewModel:ObservableObject {
     func bookmark(for article:Article){
         if isArticleExists(with: article.url) {
             handleExisitingArticle()
-            return
         }
         
         repository.insert(article: article) { [weak self] (success) in
