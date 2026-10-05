@@ -31,8 +31,4 @@ class ArticleViewModel: ObservableObject {
                 self.articles = articles
             }
     }
-    
-    deinit {
-        cancellableTask = nil
-    }
 }
