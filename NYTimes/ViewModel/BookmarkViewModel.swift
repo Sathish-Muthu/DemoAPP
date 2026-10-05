@@ -32,7 +32,6 @@ class BookmarkViewModel:ObservableObject {
     func bookmark(for article:Article){
         if isArticleExists(with: article.url) {
             handleExisitingArticle()
-            return
         }
         
         repository.insert(article: article) { [weak self] (success) in
@@ -45,7 +44,6 @@ class BookmarkViewModel:ObservableObject {
         
         if isArticleExists(with: article.url) {
             handleExisitingArticle()
-            return
         }
         
         repository.insert(article: article) { [weak self] (success) in
@@ -79,7 +77,7 @@ class BookmarkViewModel:ObservableObject {
     
     private func showAlertForAddedBookmark(success:Bool){
         self.shouldShowAlert = true
-        self.message = success ? "Added to Bookmarks" : "Error Bookmarking this article"
+        self.message = success ? "Added to Bookmarks"
     }
     
     private func showAlertForDeletedBookmark(success:Bool){
